@@ -1,10 +1,11 @@
 package modelo;
+import interfaces.IPersona;
 
-public class Persona {
+public class Persona implements IPersona {
     private String nombre;
-    private int dni;
+    private String dni;
 
-    public Persona(String nombre, int dni) {
+    public Persona(String nombre, String dni) {
         this.nombre = nombre;
         this.dni = dni;
     }
@@ -13,12 +14,20 @@ public class Persona {
         return nombre;
     }
 
-    public int getDni() {
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDni() {
         return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     @Override
     public String toString() {
-        return nombre + " (DNI: " + dni + ")";
+        return "Persona: Nombre:" + nombre + ", DNI:" + dni;
     }
 }

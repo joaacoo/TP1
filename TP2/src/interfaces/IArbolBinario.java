@@ -1,12 +1,12 @@
 package interfaces;
 
-import modelo.Persona;
+import java.util.Comparator;
 
-public interface IArbolBinario {
-    void insertar(Persona persona, boolean compararPorDni);
-    void eliminar(int valor, boolean compararPorDni);
-    boolean buscar(int valor, boolean compararPorDni);
-    void mostrarInOrden();
-    void mostrarPreOrden();
-    void mostrarPostOrden();
+public interface IArbolBinario<T> {
+    void insertar(T dato, Comparator<T> cmp);
+    boolean buscar(T dato, Comparator<T> cmp);
+    boolean eliminar(T dato, Comparator<T> cmp);
+    void recorrerPreOrder();
+    void recorrerInOrder();
+    void recorrerPostOrder();
 }
